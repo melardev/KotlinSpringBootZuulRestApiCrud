@@ -1,0 +1,9 @@
+# Forward any /todos/SOMETHING to localhost:8081/api/SOMETHING
+# But since we used context-path for this microservice to /api then /api/todos/SOMETHING to localhost:8081/api/SOMETHING
+zuul:
+  routes:
+    todos:
+      url: http://localhost:8081/api/todos
+server:
+  servlet:
+    context-path: /api
